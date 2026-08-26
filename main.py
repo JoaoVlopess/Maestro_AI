@@ -19,12 +19,11 @@ if not os.getenv("GEMINI_API_KEY"):
     )
 
 modelo = ChatGoogleGenerativeAI(
-    model="gemini-3.5-flash-lite",
-    temperature=0.2,
+    model="gemini-3.5-flash-lite"
 )
 
 mensagens = [PROMPT_MAESTRO, COMANDO_HUMANO]
 
 resposta = modelo.invoke(mensagens)
 print("\nMAESTRO AI\n")
-print(resposta.text)
+print(resposta)
