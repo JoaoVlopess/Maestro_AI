@@ -7,12 +7,13 @@ from prompts.prompt_maestro import PROMPT_MAESTRO
 
 
 from models.maestro import SolicitacaoAula
+from services.maestro import gerar_aula
 
 
 solicitacao = SolicitacaoAula(
     pergunta="O que é um intervalo musical?",
-    nivel_aluno="iniciante",
+    nivel_aluno="avancado",
     instrumento_escolhido="guitarra",
 )
 
-print(solicitacao)
+print(gerar_aula(solicitacao))
