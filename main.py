@@ -4,9 +4,9 @@ from services.maestro import gerar_aula
 
 
 solicitacao = SolicitacaoAula(
-    pergunta="O que é um intervalo musical? Me de um exemplo de diversos intervalos diferentes partindo de A#.",
+    pergunta="O que é uma Função dominante secundaria e como ela se relaciona com a progressão harmônica em uma música?",
     nivel_aluno="avancado",
-    instrumento_escolhido="guitarra",
+    instrumento_escolhido="violao",
 )
 
 print(gerar_aula(solicitacao))
