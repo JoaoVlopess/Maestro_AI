@@ -4,8 +4,8 @@ from services.maestro import gerar_aula
 
 
 solicitacao = SolicitacaoAula(
-    pergunta="O que é uma Função dominante secundaria e como ela se relaciona com a progressão harmônica em uma música?",
-    nivel_aluno="avancado",
+    pergunta="O que é cifra? Para que ela serve e quais as principais modificações que podem ser feitas em um acorde na cifra?",
+    nivel_aluno="intermediario",
     instrumento_escolhido="violao",
 )
 

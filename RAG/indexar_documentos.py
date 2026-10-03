@@ -45,11 +45,12 @@ def indexar_chunks(chunks: list[Document]) -> None:
     banco.add_documents(chunks)
 
 
-caminho_pdf = "apostilas_pdf/Apostila-Teoria-Musical-Para-Iniciantes.docx-1.pdf"
-
+caminhos_pdf = [
+    "apostilas_pdf/apostila_1.pdf",
+]
 
 def main():
-    documento = criar_documento(caminho_pdf)
+    documento = criar_documento(caminhos_pdf[1])
     chunks = dividir_documento(documento)
     indexar_chunks(chunks)
 

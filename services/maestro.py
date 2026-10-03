@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from langchain.agents import create_agent
 from langchain_google_genai import ChatGoogleGenerativeAI
 
+from RAG.buscar_documentos import buscar_documentos
 from models.maestro import SolicitacaoAula, RespostaMaestro
 from prompts.prompt_maestro import PROMPT_MAESTRO
 from tools.ferramentas_maestro import calcular_intervalo
@@ -32,6 +33,12 @@ def gerar_aula(solicitacao: SolicitacaoAula) -> RespostaMaestro:
     Nível do aluno: {solicitacao.nivel_aluno}
     Instrumento escolhido: {solicitacao.instrumento_escolhido}
     """
+
+    vetorial_content = buscar_documentos(solicitacao.pergunta, quantidade=3)
+
+    mensagem_usuario += "\n\nCOntexto recuperado das apostilas:\n"
+    for i, documento in enumerate(vetorial_content, start=1):
+        mensagem_usuario += f"{i}. {documento.page_content} {documento.metadata.get('source', 'Fonte não informada')}\n"
 
     resultado = agente_maestro.invoke(
         {

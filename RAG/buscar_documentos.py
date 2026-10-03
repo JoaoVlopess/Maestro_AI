@@ -5,7 +5,7 @@ from RAG.banco_vetorial import obter_banco_vetorial
 
 def buscar_documentos(
     pergunta: str,
-    quantidade: int = 4,
+    quantidade: int = 3,
 ) -> list[Document]:
     """Busca no Chroma os chunks mais relacionados à pergunta."""
     banco = obter_banco_vetorial()
